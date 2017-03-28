@@ -1,0 +1,19 @@
+main: me.Tiernanator.ServerMessenger.Main
+version: 4.0.4
+name: Server_Messenger
+description: A Plugin that broadcasts given messages to the Server.
+load: POSTWORLD
+author: Tiernanator
+website: None
+database: false
+depend: [Utilities]
+prefix: Messenger
+softdepend: []
+loadbefore: []
+commands:
+    addServerMessage:
+        description: Add a Message to be broadcasted to the entire Server.
+    listServerMessages:
+        description: See all Server Messages available for broadcasting.
+    removeServerMessage:
+        description: Remove a Server Message by index.
