@@ -1,6 +1,6 @@
 package me.Tiernanator.ServerMessenger.Command;
 
-import java.util.HashMap;
+import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,13 +9,13 @@ import org.bukkit.command.CommandSender;
 
 import me.Tiernanator.Colours.Colour;
 import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.ServerMessenger.Main;
+import me.Tiernanator.ServerMessenger.ServerMessengerMain;
 import me.Tiernanator.ServerMessenger.Functions.ServerMessenger;
 
 public class RemoveMessage implements CommandExecutor {
 
 	@SuppressWarnings("unused")
-	private Main plugin;
+	private ServerMessengerMain plugin;
 	
 	private ChatColor good = Colour.GOOD.getColour();
 	private ChatColor warning = Colour.WARNING.getColour();
@@ -23,7 +23,7 @@ public class RemoveMessage implements CommandExecutor {
 	private ChatColor bad = Colour.BAD.getColour();
 	
 
-	public RemoveMessage(Main main) {
+	public RemoveMessage(ServerMessengerMain main) {
 		plugin = main;
 	}
 
@@ -41,7 +41,7 @@ public class RemoveMessage implements CommandExecutor {
 		int index = -1;
 		
 		try {
-			index = Integer.parseInt(args[0]);
+			index = Integer.parseInt(args[0]) - 1;
 		} catch (Exception e) {
 			sender.sendMessage(bad + "Please enter an index that is actually a number!");
 			e.printStackTrace();
@@ -53,12 +53,12 @@ public class RemoveMessage implements CommandExecutor {
 			return false;
 		}
 		
-		HashMap<Integer, String> allMessages = ServerMessenger.getAllMessages();
+		List<String> allMessages = ServerMessenger.getAllMessages();
 		
 		String message = "";
 		
-		if(!(allMessages.keySet().contains(index))) {
-			sender.sendMessage(bad + "There is no message with the index " + highlight + args[0] + bad + "!");
+		if(allMessages.size() < index) {
+			sender.sendMessage(bad + "There is no message with the index " + highlight + (index + 1) + bad + "!");
 			return false;
 		}
 		

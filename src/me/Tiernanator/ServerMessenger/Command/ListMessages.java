@@ -1,6 +1,6 @@
 package me.Tiernanator.ServerMessenger.Command;
 
-import java.util.HashMap;
+import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,19 +9,19 @@ import org.bukkit.command.CommandSender;
 
 import me.Tiernanator.Colours.Colour;
 import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.ServerMessenger.Main;
+import me.Tiernanator.ServerMessenger.ServerMessengerMain;
 import me.Tiernanator.ServerMessenger.Functions.ServerMessenger;
 
 public class ListMessages implements CommandExecutor {
 
 	@SuppressWarnings("unused")
-	private Main plugin;
+	private ServerMessengerMain plugin;
 	
 	private ChatColor good = Colour.GOOD.getColour();
 	private ChatColor informative = Colour.INFORMATIVE.getColour();
 	private ChatColor bad = Colour.BAD.getColour();
 	
-	public ListMessages(Main main) {
+	public ListMessages(ServerMessengerMain main) {
 		plugin = main;
 	}
 
@@ -30,7 +30,7 @@ public class ListMessages implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		
-		HashMap<Integer, String> allMessages = ServerMessenger.getAllMessages();
+		List<String> allMessages = ServerMessenger.getAllMessages();
 
 		if(allMessages == null || allMessages.isEmpty()) {
 			sender.sendMessage(bad + "There are no Server Messages.");
@@ -38,12 +38,12 @@ public class ListMessages implements CommandExecutor {
 		}
 		
 		sender.sendMessage(good + "The Server Messages are:");
-		for(int i : allMessages.keySet()) {
+		for(int i = 0; i < allMessages.size(); i++) {
 			
 			String messageUnformatted = allMessages.get(i);
 			String message = MessageColourer.parseMessage(messageUnformatted, ChatColor.WHITE);
 			
-			String index = Integer.toString(i);
+			String index = Integer.toString(i + 1);
 			
 			sender.sendMessage(informative + " - " + index + ": " + ChatColor.RESET + message);
 		}

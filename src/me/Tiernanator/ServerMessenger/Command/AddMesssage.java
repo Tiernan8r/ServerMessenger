@@ -7,18 +7,18 @@ import org.bukkit.command.CommandSender;
 
 import me.Tiernanator.Colours.Colour;
 import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.ServerMessenger.Main;
+import me.Tiernanator.ServerMessenger.ServerMessengerMain;
 import me.Tiernanator.ServerMessenger.Functions.ServerMessenger;
 
 public class AddMesssage implements CommandExecutor {
 
 	@SuppressWarnings("unused")
-	private Main plugin;
+	private ServerMessengerMain plugin;
 
 	private ChatColor good = Colour.GOOD.getColour();
 	private ChatColor warning = Colour.WARNING.getColour();
 	
-	public AddMesssage(Main main) {
+	public AddMesssage(ServerMessengerMain main) {
 		plugin = main;
 	}
 

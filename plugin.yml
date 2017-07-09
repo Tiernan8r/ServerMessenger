@@ -1,4 +1,4 @@
-main: me.Tiernanator.ServerMessenger.Main
+main: me.Tiernanator.ServerMessenger.ServerMessengerMain
 version: 4.0.4
 name: Server_Messenger
 description: A Plugin that broadcasts given messages to the Server.
@@ -17,3 +17,5 @@ commands:
         description: See all Server Messages available for broadcasting.
     removeServerMessage:
         description: Remove a Server Message by index.
+    broadcast:
+        description: Broadcast a random server message to all players.
