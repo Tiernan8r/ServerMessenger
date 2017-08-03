@@ -2,12 +2,12 @@ package me.Tiernanator.ServerMessenger;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.Tiernanator.SQL.SQLServer;
 import me.Tiernanator.ServerMessenger.Command.AddMesssage;
 import me.Tiernanator.ServerMessenger.Command.Broadcast;
 import me.Tiernanator.ServerMessenger.Command.ListMessages;
 import me.Tiernanator.ServerMessenger.Command.RemoveMessage;
 import me.Tiernanator.ServerMessenger.Functions.ServerMessenger;
+import me.Tiernanator.Utilities.SQL.SQLServer;
 
 public class ServerMessengerMain extends JavaPlugin {
 		

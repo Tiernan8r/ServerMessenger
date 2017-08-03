@@ -5,10 +5,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import me.Tiernanator.Colours.Colour;
-import me.Tiernanator.Colours.MessageColourer;
 import me.Tiernanator.ServerMessenger.ServerMessengerMain;
 import me.Tiernanator.ServerMessenger.Functions.ServerMessenger;
+import me.Tiernanator.Utilities.Colours.Colour;
+import me.Tiernanator.Utilities.Colours.MessageColourer;
 
 public class AddMesssage implements CommandExecutor {
 

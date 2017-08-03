@@ -7,9 +7,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.SQL.SQLServer;
 import me.Tiernanator.ServerMessenger.ServerMessengerMain;
+import me.Tiernanator.Utilities.Colours.MessageColourer;
+import me.Tiernanator.Utilities.SQL.SQLServer;
 
 public class ServerMessenger extends BukkitRunnable {
 
